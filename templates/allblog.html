@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('{{url_for('static', filename='home-bg.jpg')}}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Rundong's Blog</h1>
+                        <hr class="small">
+                        <span class="subheading">Join the fight of Anti-Phishing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {% for page in pages %}
+                    <div class="post-preview">
+                        <a href="{{ url_for("page", path=page.path) }}">
+                            <h2 class="post-title">
+                                {{page.title}}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{page.sub_title}}
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posted by <a href="#">Rundong Liu</a> {{page.date}}</p>
+                    </div>
+                    <hr>
+                {% else %}
+                    <div class="post-preview">
+                        <h2 class="post-title">
+                            No Post Yet
+                        </h2>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {{ pagination.links }}
+    <hr>
+{% endblock content %}
+
