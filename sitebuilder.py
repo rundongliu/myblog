@@ -29,9 +29,12 @@ def show_blog():
         start_page = int(request.args.get('page', 1))
     except ValueError:
         start_page = 1
+    #print start_page
 
     pagination = Pagination(page=start_page, total=len(pages), css_framework='bootstrap3', search=False, per_page=PERPAGE, record_name='blogs')
     return render_template('allblog.html',  pages = pages[start_page-1:start_page+PERPAGE-1], pagination=pagination)
+
+    #return render_template('allblog.html',  pages = pages, pagination=pagination)
 
 @app.route('/tag/<string:tag>/')
 def tag(tag):
