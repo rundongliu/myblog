@@ -1,5 +1,5 @@
 import sys
-from flask import Flask, redirect, request, render_template, send_from_directory
+from flask import Flask, redirect, request, render_template, send_from_directory, url_for
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from werkzeug import secure_filename
@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 flatpages = FlatPages(app)
 pages = sorted([p for p in flatpages ], key=lambda item:item['date'], reverse=True)
-freezer = Freezer(app, with_no_argument_rules=False)
+freezer = Freezer(app)
 
 @app.route('/')
 def index():
