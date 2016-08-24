@@ -1,6 +1,5 @@
 build/*
 word/*
-pages/*
 *.pyc
 *.swp
 
